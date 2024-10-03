@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int total_kertas = 0;
+    const int max_kertas = 50;
+
+    cout << "Selamat datang di program penyimpanan kertas!" << endl;
+    cout << "Masukkan kertas hanya berjumlah 10 setiap kali penyimpanan, dan jumlah maksimal penyimpanan adalah 50 kertas." << endl;
+
+    while (total_kertas < max_kertas) {
+        int kertas;
+        cout << "\nMasukan kertas : ";
+        cin >> kertas;
+
+        // Cek apakah jumlah kertas yang dimasukkan kurang dari 10
+        if (kertas < 10) {
+            cout << "Kertas yang dimasukan kurang " << 10 - kertas << endl;
+            cout << "Coba Lagi!" << endl;
+        }
+        // Cek apakah jumlah kertas yang dimasukkan lebih dari 10
+        else if (kertas > 10) {
+            cout << "Kertas yang dimasukan lebih " << kertas - 10 << endl;
+            cout << "Coba Lagi!" << endl;
+        }
+        // Jika jumlah kertas tepat 10
+        else {
+            total_kertas += kertas;
+            cout << "\nJumlah kertas " << total_kertas << endl;
+            cout << "=================" << endl;
+        }
+
+        // Cek jika penyimpanan penuh
+        if (total_kertas == max_kertas) {
+            cout << "\nPENYIMPANAN KERTAS TELAH PENUH!" << endl;
+            break;
+        }
+    }
+
+    return 0;
+}
