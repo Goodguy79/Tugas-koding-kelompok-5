@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int jumlah_buku, total_buku = 0, kapasitas_lemari = 30;
+
+    while (total_buku < kapasitas_lemari) {
+        cout << "Masukkan jumlah buku : ";
+        cin >> jumlah_buku;
+
+        if (jumlah_buku % 2 == 0) {
+            cout << "Buku yang dimasukkan tidak berjumlah ganjil!" << endl;
+            cout << "Coba lagi!" << endl << endl;
+        } else {
+            if (total_buku + jumlah_buku > kapasitas_lemari) {
+                cout << "Jumlah buku melebihi kapasitas lemari!" << endl;
+                break;
+            } else {
+                total_buku += jumlah_buku;
+                cout << "Memasukkan " << jumlah_buku << " buku" << endl << endl;
+            }
+        }
+
+        cout << "Jumlah Buku " << total_buku << endl;
+        cout << "==============" << endl << endl;
+    }
+
+    if (total_buku >= kapasitas_lemari) {
+        cout << "Lemari Buku telah penuh" << endl;
+    }
+
+    return 0;
+}
